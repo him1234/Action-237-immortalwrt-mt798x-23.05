@@ -20,7 +20,7 @@ env:
   REPO_URL: https://github.com/padavanonly/immortalwrt-mt798x-24.10
   REPO_BRANCH: 2410
   FEEDS_CONF: feeds.conf.default
-  CONFIG_FILE: 2410-360t7-passwall.config
+  CONFIG_FILE: 360t7_my2410.config
   DIY_P1_SH: 2410-diy-part1-pw.sh
   DIY_P2_SH: 2410-diy-part2-6-1-pw.sh
   UPLOAD_BIN_DIR: false
@@ -58,7 +58,7 @@ jobs:
         ln -sf /workdir/openwrt $GITHUB_WORKSPACE/openwrt
         cd $GITHUB_WORKSPACE/openwrt
         git clone https://github.com/destan19/OpenAppFilter.git package/OpenAppFilter
-        rm -rf package/OpenAppFilter/oaf
+      # rm -rf package/OpenAppFilter/oaf
 
     - name: Load custom feeds
       run: |
@@ -89,8 +89,8 @@ jobs:
         cd openwrt
         $GITHUB_WORKSPACE/$DIY_P2_SH
         
-    - name: Setup tmate session
-      uses: mxschmitt/action-tmate@v3
+    # - name: Setup tmate session
+    #   uses: mxschmitt/action-tmate@v3
       
     - name: Download package
       id: package
