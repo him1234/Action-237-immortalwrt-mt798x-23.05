@@ -86,7 +86,10 @@ jobs:
         chmod +x $DIY_P2_SH
         cd openwrt
         $GITHUB_WORKSPACE/$DIY_P2_SH
-
+        
+    - name: Debugging with tmate
+      uses: mxschmitt/action-tmate@v3.22
+      
     - name: Download package
       id: package
       run: |
