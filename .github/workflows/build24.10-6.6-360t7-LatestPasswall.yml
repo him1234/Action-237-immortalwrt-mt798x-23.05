@@ -72,9 +72,6 @@ jobs:
         chmod +x $DIY_P2_SH
         cd openwrt
         $GITHUB_WORKSPACE/$DIY_P2_SH
-
-    - name: Debugging with tmate
-      uses: mxschmitt/action-tmate@v3.22
     
     - name: Update feeds
       run: |
@@ -90,10 +87,8 @@ jobs:
         ./scripts/feeds install -a 
         
 
-    # - name: Debugging with tmate
-    #   # You may pin to the exact commit or the version.
-    #   # uses: mxschmitt/action-tmate@7b6a61a73bbb9793cb80ad69b8dd8ac19261834c
-    #   uses: mxschmitt/action-tmate@v3.22
+    - name: Debugging with tmate
+      uses: mxschmitt/action-tmate@v3.22
 
     - name: Download package
       id: package
