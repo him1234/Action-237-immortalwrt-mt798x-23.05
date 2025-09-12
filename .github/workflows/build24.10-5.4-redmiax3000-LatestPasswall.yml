@@ -10,15 +10,15 @@
 # See /LICENSE for more information.
 #
 
-name: Build immortalwrt24.10-5.4 360T7 Latest Passwall
+name: Build immortalwrt24.10-5.4 redmiax3000 Latest Passwall
 
 on:
   repository_dispatch:
   workflow_dispatch:
 
 env:
-  REPO_URL: https://github.com/padavanonly/immortalwrt-mt798x-24.10
-  REPO_BRANCH: 2410
+  REPO_URL: https://github.com/kmiit/Redmi_AX3000_immortalwrt.git
+  REPO_BRANCH: redmi_ax3000-24.10
   FEEDS_CONF: feeds.conf.default
   CONFIG_FILE: 2410-5.4-360t7-passwall.config
   DIY_P1_SH: diy-part1.sh
@@ -87,13 +87,13 @@ jobs:
         rm -rf feeds/luci/applications/luci-app-passwall
         git clone https://github.com/xiaorouji/openwrt-passwall package/passwall-luci        
          
-    - name: Load custom configuration
-      run: |
-        [ -e files ] && mv files openwrt/files
-        [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
-        chmod +x $DIY_P2_SH
-        cd openwrt
-        $GITHUB_WORKSPACE/$DIY_P2_SH
+    # - name: Load custom configuration
+    #   run: |
+    #     [ -e files ] && mv files openwrt/files
+    #     [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
+    #     chmod +x $DIY_P2_SH
+    #     cd openwrt
+    #     $GITHUB_WORKSPACE/$DIY_P2_SH
 
     - name: Debugging with tmate
       uses: mxschmitt/action-tmate@v3.22
