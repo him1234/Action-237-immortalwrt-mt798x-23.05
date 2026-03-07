@@ -17,7 +17,7 @@ on:
   workflow_dispatch:
 
 env:
-  REPO_URL: https://github.com/him1234/immortalwrt-mt798x-6.6
+  REPO_URL: https://github.com/padavanonly/immortalwrt-mt798x-6.6
   REPO_BRANCH: openwrt-24.10-6.6
   FEEDS_CONF: feeds.conf.default
   CONFIG_FILE: 2410-6.6-360t7-passwall.config
@@ -86,7 +86,7 @@ jobs:
          cd openwrt
          ./scripts/feeds update -a
          rm -rf feeds/packages/lang/golang
-         git clone https://github.com/sbwml/packages_lang_golang -b 25.x feeds/packages/lang/golang
+         git clone https://github.com/sbwml/packages_lang_golang -b 26.x feeds/packages/lang/golang
     - name: Install feeds
       run: |
         cd openwrt
