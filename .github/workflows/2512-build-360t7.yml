@@ -78,8 +78,8 @@ jobs:
         ln -sf /workdir/openwrt $GITHUB_WORKSPACE/openwrt
     - name: Load custom feeds
       run: |
-        rm openwrt/target/linux/mediatek/dts/mt7981b-qihoo-360t7.dts
-        mv $DTS_CONF openwrt/target/linux/mediatek/dts/mt7981b-qihoo-360t7.dts
+        # rm openwrt/target/linux/mediatek/dts/mt7981b-qihoo-360t7.dts
+        # mv $DTS_CONF openwrt/target/linux/mediatek/dts/mt7981b-qihoo-360t7.dts
         rm openwrt/target/linux/mediatek/image/filogic.mk
         mv $IMG_CONF openwrt/target/linux/mediatek/image/filogic.mk
         chmod +x $DIY_P1_SH
